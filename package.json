@@ -1,6 +1,7 @@
 {
   "scripts": {
-    "dev": "elm-live src/Main.elm --open -- --debug"
+    "dev": "elm-live src/Main.elm --open -- --debug",
+    "build": "elm make src/Main.elm"
   },
   "devDependencies": {
     "elm": "^0.19.1-6",
