@@ -69,21 +69,43 @@ port copyToClipboard : String -> Cmd msg
 
 view : Model -> Html Msg
 view model =
-    Html.div []
-        [ Html.header [] [ Html.h1 [] [ Html.text "Mimify" ] ]
-        , Html.main_ []
-            [Html.form
-                [ Events.onSubmit MimifyPhrase]
-                [ Html.input
-                    [ Attributes.type_ "text"
-                      , Attributes.value model.phrase
-                      , Attributes.placeholder "Enter a phrase"
-                      , Attributes.size 50
-                      , Events.onInput UpdatePhrase
-                    ]
-                    []
-                , Html.button [ Attributes.type_ "submit" ] [ Html.text "Mimify!" ]
+    Html.div [ Attributes.style "margin" "1rem"]
+        [ Html.header [] 
+            [ Html.h1 
+                [ Attributes.style "width" "fit-content"
+                  , Attributes.style "margin-left" "auto"
+                  , Attributes.style "margin-right" "auto"
+                  , Attributes.style "margin-bottom" "1rem"
                 ]
-            , Html.span [ Events.onClick CopyToClipboard, Attributes.style "cursor" "pointer" ] [ Html.text model.mimyfiedPhrase ]
+                [ Html.text "Mimify" ]
+            ]
+        , Html.main_ []
+            [ Html.section 
+                [ Attributes.style "width" "80%"
+                  , Attributes.style "margin" "0 auto"
+                ] 
+                [ Html.form
+                    [ Events.onSubmit MimifyPhrase
+                      , Attributes.style "width" "fit-content"
+                      , Attributes.style "margin" "0 auto"
+                    ]
+                    [ Html.input
+                        [ Attributes.type_ "text"
+                        , Attributes.value model.phrase
+                        , Attributes.placeholder "Enter a phrase"
+                        , Attributes.size 50
+                        , Events.onInput UpdatePhrase
+                        ]
+                        []
+                    , Html.button [ Attributes.type_ "submit" ] [ Html.text "Mimify!" ]
+                    ]
+                  , Html.div
+                    [ Attributes.style "width" "fit-content"
+                      , Attributes.style "margin-left" "auto"
+                      , Attributes.style "margin-right" "auto"
+                      , Attributes.style "margin-top" "3rem"
+                    ]
+                    [Html.span [ Events.onClick CopyToClipboard, Attributes.style "cursor" "pointer" ] [ Html.text model.mimyfiedPhrase ]]
+                ]
             ]
         ]
