@@ -76,6 +76,8 @@ view model =
                   , Attributes.style "margin-left" "auto"
                   , Attributes.style "margin-right" "auto"
                   , Attributes.style "margin-bottom" "1rem"
+                  , Attributes.style "font-size" "3rem"
+                  , Attributes.style "font-style" "normal"
                 ]
                 [ Html.text "Mimify" ]
             ]
@@ -105,7 +107,14 @@ view model =
                       , Attributes.style "margin-right" "auto"
                       , Attributes.style "margin-top" "3rem"
                     ]
-                    [Html.span [ Events.onClick CopyToClipboard, Attributes.style "cursor" "pointer" ] [ Html.text model.mimyfiedPhrase ]]
+                    [Html.span 
+                      [ Events.onClick CopyToClipboard
+                        , Attributes.style "cursor" "pointer"
+                        , Attributes.style "font-size" "3rem"
+                        , Attributes.style "font-style" "normal"
+                      ]
+                      [ Html.text model.mimyfiedPhrase ]
+                    ]
                 ]
             ]
         ]
