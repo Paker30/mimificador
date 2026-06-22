@@ -1,0 +1,20 @@
+{
+    "short_name": "Mimify",
+    "name": "Mimify your answers!",
+    "icons": [
+      {
+        "src":"icon192.png",
+        "sizes": "192x192",
+        "type": "image/png"
+      },
+      {
+        "src":"icon512.png",
+        "sizes": "512x512",
+        "type": "image/png"
+      }
+    ],
+    "start_url": "./index.html",
+    "background_color": "#FFFFFF",
+    "theme_color": "rgb(185, 79, 114)",
+    "display": "standalone"
+  }
