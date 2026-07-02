@@ -69,7 +69,7 @@ port copyToClipboard : String -> Cmd msg
 
 view : Model -> Html Msg
 view model =
-    Html.div [ Attributes.style "margin" "1rem"]
+    Html.div [ Attributes.class "wrapper" ]
         [ Html.header [] 
             [ Html.h1 
                 [ Attributes.style "width" "fit-content"
