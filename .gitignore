@@ -1,4 +1,4 @@
 node_modules/
 elm-stuff/
-public/index.html
-public/main.js
+index.html
+main.js

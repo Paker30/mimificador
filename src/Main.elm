@@ -81,7 +81,7 @@ view model =
                 ]
                 [ Html.text "Mimify" ]
             ]
-        , Html.main_ []
+        , Html.div []
             [ Html.section 
                 [ Attributes.style "width" "80%"
                   , Attributes.style "margin" "0 auto"
