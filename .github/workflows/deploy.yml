@@ -40,9 +40,9 @@ jobs:
 
       - name: Upload files to S3 bucket
         run: |
-          aws s3 cp public/main.js s3://${{ secrets.S3_BUCKET }}/main.js --content-type application/javascript
-          aws s3 cp public/index.html s3://${{ secrets.S3_BUCKET }}/index.html --content-type text/html
-          aws s3 cp public/manifest.json s3://${{ secrets.S3_BUCKET }}/manifest.json --content-type application/manifest+json
-          aws s3 cp public/icon.ico s3://${{ secrets.S3_BUCKET }}/icon.ico --content-type image/x-icon
-          aws s3 cp public/192x192.png s3://${{ secrets.S3_BUCKET }}/192x192.png --content-type image/png
-          aws s3 cp public/512x512.png s3://${{ secrets.S3_BUCKET }}/512x512.png --content-type image/png
+          aws s3 cp main.js s3://${{ secrets.S3_BUCKET }}/main.js --content-type application/javascript
+          aws s3 cp index.html s3://${{ secrets.S3_BUCKET }}/index.html --content-type text/html
+          aws s3 cp assets/manifest.json s3://${{ secrets.S3_BUCKET }}/manifest.json --content-type application/manifest+json
+          aws s3 cp assets/icon.ico s3://${{ secrets.S3_BUCKET }}/icon.ico --content-type image/x-icon
+          aws s3 cp assets/icon192.png s3://${{ secrets.S3_BUCKET }}/icon192.png --content-type image/png
+          aws s3 cp assets/icon512.png s3://${{ secrets.S3_BUCKET }}/icon512.png --content-type image/png

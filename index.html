@@ -3,12 +3,13 @@
   <head>
     <meta charset="UTF-8" />
     <title>Mimify!</title>
+	<link rel="stylesheet" href="./style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Londrina+Shadow&display=swap" rel="stylesheet">
-     <link rel="shortcut icon" type="image/png/ico" href="./icon.ico" />
+     <link rel="shortcut icon" type="image/png/ico" href="./assets/icon.ico" />
     <!-- Add manifest -->
-    <link rel="manifest" href="./manifest.json">
+    <link rel="manifest" href="./assets/manifest.json">
     <!-- Tell the browser it's a PWA -->
     <meta name="mobile-web-app-capable" content="yes">
     <!-- Tell iOS it's a PWA -->
@@ -20,7 +21,9 @@
     }
   </style>
   <body>
-    <div id="app"></div>
+	<main>
+    	<div id="app"></div>
+	</main>
     <script src="main.js"></script>
     <script>
       const app = Elm.Main.init({
