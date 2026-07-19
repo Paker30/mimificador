@@ -40,9 +40,10 @@ jobs:
 
       - name: Upload files to S3 bucket
         run: |
-          aws s3 cp main.js s3://${{ secrets.S3_BUCKET }}/main.js --content-type application/javascript
           aws s3 cp index.html s3://${{ secrets.S3_BUCKET }}/index.html --content-type text/html
-          aws s3 cp assets/manifest.json s3://${{ secrets.S3_BUCKET }}/manifest.json --content-type application/manifest+json
+          aws s3 cp main.js s3://${{ secrets.S3_BUCKET }}/main.js --content-type application/javascript
+          aws s3 cp styles.css s3://${{ secrets.S3_BUCKET }}/styles.css --content-type text/css
           aws s3 cp assets/icon.ico s3://${{ secrets.S3_BUCKET }}/icon.ico --content-type image/x-icon
           aws s3 cp assets/icon192.png s3://${{ secrets.S3_BUCKET }}/icon192.png --content-type image/png
           aws s3 cp assets/icon512.png s3://${{ secrets.S3_BUCKET }}/icon512.png --content-type image/png
+          aws s3 cp assets/manifest.json s3://${{ secrets.S3_BUCKET }}/manifest.json --content-type application/manifest+json
