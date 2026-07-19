@@ -70,7 +70,7 @@ port copyToClipboard : String -> Cmd msg
 view : Model -> Html Msg
 view model =
     Html.div [ Attributes.class "wrapper" ]
-        [ Html.header [] 
+        [ Html.header [ Attributes.class "header-wrapper" ] 
             [ Html.h1 
                 [ Attributes.style "width" "fit-content"
                   , Attributes.style "margin-left" "auto"
@@ -81,40 +81,48 @@ view model =
                 ]
                 [ Html.text "Mimify" ]
             ]
-        , Html.div []
-            [ Html.section 
-                [ Attributes.style "width" "80%"
-                  , Attributes.style "margin" "0 auto"
-                ] 
-                [ Html.form
-                    [ Events.onSubmit MimifyPhrase
-                      , Attributes.style "width" "fit-content"
-                      , Attributes.style "margin" "0 auto"
+        , Html.section
+            [ Attributes.class "card"
+            ] 
+            [ Html.article
+                []
+                [  Html.h1 [ Attributes.class "article-title" ]
+                    [ Html.text "✏️ Escribe una frase" ]
+                  , Html.form
+                    [ Attributes.class "form"
+                    , Events.onSubmit MimifyPhrase
                     ]
-                    [ Html.input
-                        [ Attributes.type_ "text"
+                    [ Html.textarea
+                        [ Attributes.class "textarea"
                         , Attributes.value model.phrase
-                        , Attributes.placeholder "Enter a phrase"
-                        , Attributes.size 50
+                        , Attributes.placeholder "Escribe aquí cualquier frase..."
+                        , Attributes.rows 5
+                        , Attributes.cols 50
+                        , Attributes.maxlength 200
                         , Events.onInput UpdatePhrase
                         ]
                         []
-                    , Html.button [ Attributes.type_ "submit" ] [ Html.text "Mimify!" ]
-                    ]
-                  , Html.div
-                    [ Attributes.style "width" "fit-content"
-                      , Attributes.style "margin-left" "auto"
-                      , Attributes.style "margin-right" "auto"
-                      , Attributes.style "margin-top" "3rem"
-                    ]
-                    [Html.span 
-                      [ Events.onClick CopyToClipboard
-                        , Attributes.style "cursor" "pointer"
-                        , Attributes.style "font-size" "3rem"
-                        , Attributes.style "font-style" "normal"
-                      ]
-                      [ Html.text model.mimyfiedPhrase ]
+                    , Html.button [ 
+                        Attributes.class "mimify-button"
+                        , Attributes.type_ "submit" ] [ Html.text "✨ Mimificar" ]
                     ]
                 ]
+                , Html.article
+                    [ Attributes.class "card"
+                    ]
+                    [
+                        Html.h1 [ Attributes.class "article-title" ]
+                            [ Html.text "😊 Resultado" ]
+                        , Html.div [ Attributes.class "result-box" ]
+                            [
+                                Html.span []
+                                [ Html.text model.mimyfiedPhrase ]
+                            ]
+                        , Html.button
+                            [ Attributes.class "copy-button"
+                            , Events.onClick CopyToClipboard
+                            ]
+                            [ Html.text "📋 Copiar" ]
+                    ]
             ]
         ]
