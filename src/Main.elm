@@ -70,14 +70,9 @@ port copyToClipboard : String -> Cmd msg
 view : Model -> Html Msg
 view model =
     Html.div [ Attributes.class "wrapper" ]
-        [ Html.header [ Attributes.class "header-wrapper" ] 
+        [ Html.header [ ] 
             [ Html.h1 
-                [ Attributes.style "width" "fit-content"
-                  , Attributes.style "margin-left" "auto"
-                  , Attributes.style "margin-right" "auto"
-                  , Attributes.style "margin-bottom" "1rem"
-                  , Attributes.style "font-size" "3rem"
-                  , Attributes.style "font-style" "normal"
+                [ Attributes.class "header-title"
                 ]
                 [ Html.text "Mimify" ]
             ]

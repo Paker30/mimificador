@@ -34,6 +34,16 @@ body {
     margin: 0 auto;
 }
 
+.header-title {
+    font-size: 42px;
+    font-weight: 700;
+    line-height: 1.1;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 1rem;
+}
+
 .form {
     display: flex;
     flex-direction: column;
